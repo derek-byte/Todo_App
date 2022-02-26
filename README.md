@@ -14,3 +14,10 @@ python3 manage.py createsuperuser
 Create Basic App:
 cd todo
 python3 manage.py startapp <name>
+
+Create Model:
+python3 manage.py makemigrations
+
+Run App:
+cd todo
+python3 manage.py runserver
