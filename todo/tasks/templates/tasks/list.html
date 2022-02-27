@@ -1,5 +1,14 @@
 <h3>To Do</h3>
 
+<!-- Creating a new task -->
+<form method="POST" action="/">
+    <!-- This creates some protection against Cross Site Request Forgeries  -->
+    {%csrf_token%}
+
+    {{form.title}}
+    <input type="submit" name="Create Task">
+</form>
+
 {% for task in tasks %}
     <div>
         <p>{{task}}</p>

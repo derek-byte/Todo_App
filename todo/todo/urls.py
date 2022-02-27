@@ -18,5 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # Call on python file urls in tasks folder 
     path('', include('tasks.urls'))
 ]
