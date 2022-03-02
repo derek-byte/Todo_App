@@ -26,3 +26,22 @@ def index(request):
 
     context = {'tasks' : tasks, 'form':form}
     return render(request, 'tasks/list.html', context)
+
+# pk means primary key
+def updateTask(request, pk):
+    task = Task.objects.get(id=pk)
+
+    # Prefill the form when trying to update it
+    form = TaskForm(instance=task)
+
+    if request.method == 'POST':
+        # We still need instance=task or else it would create a new todo
+        form = TaskForm(request.POST, instance=task)
+        if form.is_valid():
+            form.save()
+            return redirect("/")
+
+    # Dictionary that stores value of previous form value 
+    context = {'form': form}
+
+    return render(request, 'tasks/update_task.html', context)

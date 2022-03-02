@@ -1,0 +1,7 @@
+<h3>Update Task</h3>
+<form method ="POST" action="">
+    {%csrf_token%}
+    <!-- Call on context dictionary's form value  -->
+    {{form}}
+    <input type="submit" name="Update Task">
+</form>
