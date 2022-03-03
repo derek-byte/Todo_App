@@ -13,6 +13,7 @@
     <div>
         <!-- Is going to go to update_task.html with the task id  -->
         <a href="{% url 'update_task' task.id %}">Update</a>
+        <a href="{% url 'delete' task.id %}">Delete</a>
         <p>{{task}}</p>
     </div>
 {% endfor %}
